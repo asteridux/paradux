@@ -1,6 +1,6 @@
 export default class Paradux {
 
-  constructor(initialReducers = []) {
+  constructor (initialReducers = []) {
     this._reducers = initialReducers
     this._registry = {}
 
@@ -9,7 +9,7 @@ export default class Paradux {
     this.deregister = this.deregister.bind(this)
   }
 
-  reducerWrapper(initReducers) {
+  reducerWrapper (initReducers) {
     this._reducers = this._reducers.concat(initReducers)
 
     return (state, action) => {
@@ -19,7 +19,7 @@ export default class Paradux {
     }
   }
 
-  register(reducer, namespace) {
+  register (reducer, namespace) {
     this._reducers.push(reducer)
 
     var deregister = this.deregister(reducer)
@@ -34,7 +34,7 @@ export default class Paradux {
     return deregister
   }
 
-  deregister(reducer) {
+  deregister (reducer) {
     return () => {
       this._reducers.splice(this._reducers.indexOf(reducer), 1)
 
@@ -42,7 +42,7 @@ export default class Paradux {
     }
   }
 
-  deregisterNamespace(namespace) {
+  deregisterNamespace (namespace) {
     this._registry[namespace].deregister()
 
     return true

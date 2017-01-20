@@ -1,6 +1,7 @@
 # Paradux
 
-Build status: [![CircleCI](https://circleci.com/gh/asteridux/paradux.svg?style=svg)](https://circleci.com/gh/AntJanus/paradux:Why)
+[![CircleCI](https://circleci.com/gh/asteridux/paradux.svg?style=svg)](https://circleci.com/gh/AntJanus/paradux:Why)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## Why?
 

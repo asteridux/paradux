@@ -8,7 +8,7 @@ describe('Sample test', () => {
   })
 
   it('should register a reducer successfully', () => {
-    var func = function() {}
+    var func = function () { }
 
     paradux.register(func)
 
