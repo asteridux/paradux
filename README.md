@@ -96,7 +96,7 @@ The only requirement for deregistration by namespace is to specify the namespace
 paradux.register(adminReducers, 'adminReducers');
 ```
 
-### Middleware - all of the above advantages
+### Middleware - all of the above advantages (WIP)
 
 The cool thing is that Paradux allows you to add and run middleware whenever you want to as well. You can add logger middleware when you want to, start DevTools when you want to, and so on. On demand and only when needed.
 
