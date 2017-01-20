@@ -1,16 +1,13 @@
 {
   "name": "paradux",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Redux middleware that adds uncertainty",
   "main": "./build/lib.js",
   "scripts": {
     "release": "standard-version",
-
     "prepublish": "npm run build",
-
     "build": "webpack",
     "watch:build": "webpack --watch",
-
     "test": "jest",
     "test:watch": "jest --watch"
   },
