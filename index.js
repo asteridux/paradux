@@ -1,7 +1,9 @@
 export default class Paradux {
 
-  constructor() {
-    this.reducers = [];
+  constructor(initialReducers = []) {
+    this.reducers = initialReducers;
+    this.registry = {};
+
 
     this.reducerWrapper = this.reducerWrapper.bind(this);
     this.register = this.register.bind(this);
@@ -20,10 +22,19 @@ export default class Paradux {
     };
   }
 
-  register({ reducer, path }) {
+  register(reducer, namespace) {
     this.reducers.push(reducer);
 
-    return this.deregister(reducer);
+    var deregister = this.deregister(reducer);
+
+    if (namespace) {
+      this.registry[namespace] = {
+        reducer,
+        deregister
+      }
+    }
+
+    return deregister;
   }
 
   deregister(reducer) {
@@ -32,6 +43,12 @@ export default class Paradux {
 
       return true;
     }
+  }
+
+  deregisterNamespace(namespace) {
+    this.registry[namespace].deregister();
+
+    return true;
   }
 
   registerMiddleware(middleware) {
