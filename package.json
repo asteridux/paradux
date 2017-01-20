@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AntJanus/paradux.git"
+    "url": "git+https://github.com/asteridux/paradux.git"
   },
   "author": "Antonin Januska <antonin@antjanus.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AntJanus/paradux/issues"
+    "url": "https://github.com/asteridux/paradux/issues"
   },
-  "homepage": "https://github.com/AntJanus/paradux#readme",
+  "homepage": "https://github.com/asteridux/paradux#readme",
   "devDependencies": {
     "babel-core": "6.21.0",
     "babel-jest": "18.0.0",
