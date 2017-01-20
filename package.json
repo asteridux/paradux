@@ -1,0 +1,41 @@
+{
+  "name": "paradux",
+  "version": "1.0.0",
+  "description": "A Redux middleware that adds uncertainty",
+  "main": "./build/lib.js",
+  "scripts": {
+    "release": "standard-version",
+
+    "prepublish": "npm run build",
+
+    "build": "webpack",
+    "watch:build": "webpack --watch",
+
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntJanus/paradux.git"
+  },
+  "author": "Antonin Januska <antonin@antjanus.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AntJanus/paradux/issues"
+  },
+  "homepage": "https://github.com/AntJanus/paradux#readme",
+  "devDependencies": {
+    "babel-core": "6.21.0",
+    "babel-jest": "18.0.0",
+    "babel-loader": "6.2.10",
+    "babel-preset-env": "1.1.8",
+    "jest": "18.1.0",
+    "standard": "8.6.0",
+    "webpack": "2.2.0"
+  },
+  "jest": {
+    "bail": true,
+    "collectCoverage": true,
+    "verbose": true
+  }
+}
