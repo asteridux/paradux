@@ -6,8 +6,8 @@
   "scripts": {
     "release": "standard-version",
     "prepublish": "npm run build",
-    "build": "webpack",
-    "watch:build": "webpack --watch",
+    "prebuild": "rimraf build && mkdir build",
+    "build": "babel index.js --out-file ./build/lib.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -22,16 +22,15 @@
   },
   "homepage": "https://github.com/asteridux/paradux#readme",
   "devDependencies": {
+    "babel-cli": "6.22.2",
     "babel-core": "6.21.0",
     "babel-jest": "18.0.0",
-    "babel-loader": "6.2.10",
     "babel-preset-env": "1.1.8",
     "eslint-config-standard": "6.2.1",
     "eslint-plugin-promise": "3.4.0",
     "eslint-plugin-standard": "2.0.1",
     "jest": "18.1.0",
     "standard": "8.6.0",
-    "webpack": "2.2.0"
   },
   "jest": {
     "bail": true,

@@ -1,6 +1,6 @@
 import Paradux from '../index'
 
-describe('Sample test', () => {
+describe('Core functionality test', () => {
   const paradux = new Paradux([])
 
   it('should have an empty collection of reducers', () => {
