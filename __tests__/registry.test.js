@@ -1,28 +1,32 @@
 import Paradux from '../index'
 
-describe('Sample test', () => {
-  const paradux = new Paradux([])
+describe('Registry test', () => {
+  it('should have an empty registry', () => {
+    const paradux = new Paradux([])
 
-  it('should have an empty collection of reducers', () => {
-    expect(paradux._reducers.length).toEqual(0)
+    expect(Object.keys(paradux._registry).length).toEqual(0)
   })
 
   it('should register a reducer successfully', () => {
+    const paradux = new Paradux([])
+
     var func = function () { }
 
-    paradux.register(func)
+    paradux.register(func, 'func')
 
-    expect(paradux._reducers.indexOf(func)).toBeGreaterThan(-1)
+    expect(paradux._registry.func).toBeDefined()
   })
 
-  it('should register/deregister a reducer successuflly', () => {
+  it('should register/deregister a reducer successuflly via registry', () => {
+    const paradux = new Paradux([])
+
     var func = () => { }
-    var deregister = paradux.register(func)
+    var deregister = paradux.register(func, 'func')
 
-    expect(paradux._reducers.indexOf(func)).toBeGreaterThan(-1)
+    expect(paradux._registry.func).toBeDefined()
 
-    deregister()
+    paradux.deregisterByNamespace('func')
 
-    expect(paradux._reducers.indexOf(func)).toBeLessThan(0)
+    expect(paradux._registry.func).toBeUndefined()
   })
 })

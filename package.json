@@ -30,7 +30,7 @@
     "eslint-plugin-promise": "3.4.0",
     "eslint-plugin-standard": "2.0.1",
     "jest": "18.1.0",
-    "standard": "8.6.0",
+    "standard": "8.6.0"
   },
   "jest": {
     "bail": true,
