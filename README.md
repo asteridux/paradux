@@ -114,3 +114,83 @@ npm install paradux --save
 ```
 
 And I suggest creating a separate file for the paradux instance for easy importing:
+
+```js
+// bootstrap.js file or something similar
+import Paradux from 'paradux';
+import defaultReducers from './reducers'; //import any reducers you always want present
+
+export default const paradux = new Paradux(defaultReducers);
+```
+
+You can then import it into your redux store:
+
+```js
+import { createStore } from 'redux';
+import paradux from './bootstrap';
+
+let store = createStore(paradux.reducerWrapper());
+```
+
+### Adding reducers
+
+Adding reducers is easy. Given the setup above, you simply need to import the new instance of Paradux and use the `register` function
+
+```js
+import paradux from './bootstrap';
+
+function myReducer(state, action) {
+  //some logic
+}
+
+paradux.register(myReducer);
+```
+
+You can also register a reducer by namespace:
+
+```js
+paradux.register(myReducer, 'my reducer');
+```
+
+### Removing reducer
+
+There are several ways of removing a reducer from the reducer collection in Paradux.
+
+First, via the returned handler:
+
+```js
+const removeReducer = paradux.register(myReducer);
+
+//when you need to remove it
+removeReducer();
+```
+
+Second, if you still have the original reducer handy, you can use that to deregister:
+
+```js
+paradux.redergister(myReducer);
+```
+
+Third, if you specified a namespace, you can deregister by namespace:
+
+```js
+paradux.deregisterByNamespace('my reducer');
+```
+
+### Non-removable reducers
+
+There's always a need for reducers that cannot be removed, there are two ways of adding these.
+
+First, via initialization:
+
+```js
+var paradux = new Paradux(arrayOfReducersThatCannotBeRemoved);
+```
+
+And second, via initializing the reducerWrapper:
+
+```js
+createStore(paradux.reducerWrapper(arrayOfReducersThatCannotBeRemoved));
+```
+
+You can use a mix and match of either techniques or both at the same time.
