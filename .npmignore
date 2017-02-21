@@ -1,0 +1,17 @@
+# editor-specific
+.vscode
+.idea
+
+# coverage
+coverage
+
+# modules
+node_modules
+bower_components
+
+# basic tmp
+tmp
+
+# logs
+npm-debug.log
+npm-debug*.log
