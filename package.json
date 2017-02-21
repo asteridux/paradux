@@ -1,6 +1,6 @@
 {
   "name": "paradux",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A Redux middleware that adds uncertainty",
   "main": "./build/lib.js",
   "scripts": {
